@@ -4,8 +4,9 @@ using namespace std;
 
 //Simple Factory Design Pattern
 
-class Pizza//The product class that has useful methods that can be overridden in the derived classes(like an interface but with opportunity to create an instance of this class)
-{public:
+class Pizza//The base class that has useful methods that can be overridden in the derived classes(like an interface but with opportunity to create an instance of this class)
+{
+public:
     /*Pizza()
     {
         cout << "Pizza const called" << endl; //There are constructors in the programm that can be uncommented to track calling of the constructors
@@ -51,7 +52,6 @@ public:
     {
          cout << "chesse Pizza is being put into the box" << endl;
     }
-
 };
 
 class VeggiPizza : public Pizza//Should override all the methods of Pizza class
@@ -77,7 +77,6 @@ public:
     {
         cout << "veggi Pizza is being put into the box" << endl;
     }
-
 };
 
 class SalamiPizza : public Pizza//Should override all the methods of Pizza class
@@ -103,12 +102,12 @@ public:
     {
         cout << "salami  Pizza is being put into the box" << endl;
     }
-
 };
 
 class SimplePizzaFactory//Has method createPizza() that creates an instance of a derived from Pizza classes depending on the given arguments
                         //SimplePizzaFactory should be the only class that works with derived from Pizza classes
-{public:
+{
+public:
     /*SimplePizzaFactory()
     {
         cout << "SimplePizzaFactory const called" << endl;
@@ -131,8 +130,6 @@ class SimplePizzaFactory//Has method createPizza() that creates an instance of a
         }
         return pizza;
     }
-
-
 };
 
 class PizzaStore//The client of the Factory, ask SimplePizzaFactory to get instances of the needed class, doesn`t know details of their implementation
